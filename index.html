@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CityU Maison | Fashion Boutique</title>
+    <meta
+      name="description"
+      content="CityU Maison is a contemporary online fashion boutique for women's and men's clothing."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header" aria-label="Primary navigation">
+      <a class="brand" href="#top" aria-label="CityU Maison home">
+        <span class="brand-mark">CM</span>
+        <span>CityU Maison</span>
+      </a>
+      <nav class="nav-links" aria-label="Shopping categories">
+        <a href="#women">Women</a>
+        <a href="#men">Men</a>
+        <a href="#collection">Collection</a>
+        <a href="#journal">Journal</a>
+      </nav>
+      <button class="bag-button" type="button" id="bagButton" aria-label="Open shopping bag">
+        <span class="bag-icon" aria-hidden="true"></span>
+        <span id="bagCount">0</span>
+      </button>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="heroTitle">
+        <div class="hero-copy">
+          <p class="eyebrow">Spring edit · City ready</p>
+          <h1 id="heroTitle">CityU Maison</h1>
+          <p class="hero-text">
+            Polished campus-to-city essentials for women and men, styled with clean tailoring,
+            soft layers, and effortless everyday confidence.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#collection">Shop Collection</a>
+            <a class="button secondary" href="#editorial">Explore Looks</a>
+          </div>
+        </div>
+        <div class="hero-gallery" aria-label="Featured CityU Maison looks">
+          <img class="hero-img tall" src="pic/1.jpg" alt="Beige oversized blazer" />
+          <img class="hero-img" src="pic/38.jpg" alt="Men's tailored city outfit" />
+          <img class="hero-img" src="pic/7.jpg" alt="Sky blue linen shirt" />
+        </div>
+      </section>
+
+      <section class="category-band" id="women" aria-label="Featured categories">
+        <article>
+          <img src="pic/4.jpg" alt="Women's knitwear edit" />
+          <div>
+            <span>Women</span>
+            <h2>Soft Tailoring</h2>
+          </div>
+        </article>
+        <article id="men">
+          <img src="pic/45.jpg" alt="Men's smart casual edit" />
+          <div>
+            <span>Men</span>
+            <h2>Sharp Weekends</h2>
+          </div>
+        </article>
+        <article>
+          <img src="pic/2.jpg" alt="Transitional outerwear edit" />
+          <div>
+            <span>New</span>
+            <h2>Layering Season</h2>
+          </div>
+        </article>
+      </section>
+
+      <section class="toolbar-section" id="collection" aria-labelledby="collectionTitle">
+        <div class="section-heading">
+          <p class="eyebrow">150-piece wardrobe</p>
+          <h2 id="collectionTitle">Shop The Collection</h2>
+        </div>
+        <div class="shop-toolbar" aria-label="Product filters">
+          <div class="segmented" id="genderFilters" role="group" aria-label="Gender filter">
+            <button type="button" class="active" data-filter="gender" data-value="All">All</button>
+            <button type="button" data-filter="gender" data-value="Female">Women</button>
+            <button type="button" data-filter="gender" data-value="Male">Men</button>
+          </div>
+          <label class="select-label">
+            <span>Season</span>
+            <select id="seasonSelect" aria-label="Season filter">
+              <option value="All">All seasons</option>
+            </select>
+          </label>
+          <label class="search-label">
+            <span>Search</span>
+            <input id="searchInput" type="search" placeholder="Blazer, linen, black..." />
+          </label>
+        </div>
+        <div class="results-line">
+          <span id="resultCount">Loading collection...</span>
+          <button class="text-button" type="button" id="resetFilters">Reset</button>
+        </div>
+        <div class="product-grid" id="productGrid" aria-live="polite"></div>
+      </section>
+
+      <section class="editorial" id="editorial" aria-labelledby="editorialTitle">
+        <img src="pic/22.jpg" alt="CityU Maison evening outfit" />
+        <div>
+          <p class="eyebrow">Maison Notes</p>
+          <h2 id="editorialTitle">Built for busy days and better evenings.</h2>
+          <p>
+            Mix relaxed knits, structured outerwear, and crisp shirts into outfits that move from
+            lecture halls to dinner plans without needing a full wardrobe reset.
+          </p>
+          <a class="button primary" href="#collection">Find Your Look</a>
+        </div>
+      </section>
+    </main>
+
+    <aside class="bag-drawer" id="bagDrawer" aria-hidden="true" aria-label="Shopping bag">
+      <div class="bag-panel">
+        <div class="bag-head">
+          <h2>Your Bag</h2>
+          <button type="button" class="close-button" id="closeBag" aria-label="Close shopping bag">×</button>
+        </div>
+        <div class="bag-items" id="bagItems"></div>
+        <div class="bag-total">
+          <span>Total</span>
+          <strong id="bagTotal">HKD 0</strong>
+        </div>
+        <button class="checkout-button" type="button">Checkout Preview</button>
+      </div>
+    </aside>
+
+    <dialog class="quick-view" id="quickView">
+      <button type="button" class="close-button" id="closeQuickView" aria-label="Close product view">×</button>
+      <div id="quickViewContent"></div>
+    </dialog>
+
+    <footer class="site-footer" id="journal">
+      <div>
+        <strong>CityU Maison</strong>
+        <p>Contemporary fashion for women and men. Curated in Hong Kong.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#collection">Collection</a>
+        <a href="#women">Women</a>
+        <a href="#men">Men</a>
+      </div>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
