@@ -654,6 +654,23 @@ input {
   color: #cfc5bc;
 }
 
+#dify-chatbot-bubble-button {
+  position: fixed !important;
+  right: 24px !important;
+  bottom: 24px !important;
+  z-index: 9999 !important;
+  background-color: #1c64f2 !important;
+}
+
+#dify-chatbot-bubble-window {
+  position: fixed !important;
+  right: 24px !important;
+  bottom: 88px !important;
+  z-index: 9999 !important;
+  width: 24rem !important;
+  height: 40rem !important;
+}
+
 .footer-links {
   gap: 18px;
   color: #e7ded6;
